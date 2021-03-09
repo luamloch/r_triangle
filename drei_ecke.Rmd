@@ -1,0 +1,43 @@
+---
+title: "`r paste('Mathe vom',  strftime(Sys.Date(), format = '%d.%m.%Y'))`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+## Das Dreieck
+
+### Ein Dreieck ist bestimmt durch
+
+-   drei Punkte
+-   Zwei Länge und ihren einschließenden Winkel
+-   Eine Länge und ein Punkt
+
+```{r, echo = TRUE}
+punkt_liste <- data.frame(name   = c("A", "B", "C"), 
+                x_kord = c(2, -3.5, 5), 
+                y_kord = c(4, 0.3, -7))
+
+
+```
+
+## Wir wollen die Punkte darstellen
+
+für die Darstellung verwenden wir das Grafik Paket [ggplot2](https://ggplot2.tidyverse.org/)
+
+```{r, echo=TRUE}
+
+ggplot(punkt_liste, aes(x = x_kord, y = y_kord)) +
+  geom_point() +
+  geom_polygon(fill = "red", alpha = 0.5 ) +
+   geom_label(
+    label = punkt_liste$name, 
+    nudge_x = c(0.0,-0.3,0.3), 
+    nudge_y = c(0.7,0.4,-0.4)
+  )
+
+```
+
