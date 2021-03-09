@@ -41,4 +41,4 @@ ggplot(punkt_liste, aes(x = x_kord, y = y_kord)) +
 
 ```
 
-Jetzt widmen wir uns auch gleich schenkligen Dreicken 
+Jetzt widmen wir uns auch gleich schenkligen Dreicken und noch weiteren Dingen 
